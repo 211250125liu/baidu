@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/weather_background"
+    tools:context=".weatherActivity"
+    >
+
+
+<!--    返回-->
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:onClick="onImageViewClick"
+        app:srcCompat="@drawable/back_foreground"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/back_foreground"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+<!--    温度，天气数据-->
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="vertical"
+
+        >
+    <TextView
+        android:id="@+id/locationText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:text="海淀区"
+        android:textSize="50sp"
+        android:textColor="@color/white"
+        />
+
+    <TextView
+        android:id="@+id/temperatureText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="31°"
+        android:textSize="50sp"
+        android:textColor="@color/white"
+        android:layout_gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/locationText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp" />
+
+    <!-- 天气描述文本 -->
+    <TextView
+        android:id="@+id/weatherDescriptionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="大部晴朗°"
+        android:layout_gravity="center"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:textSize="30sp"
+        app:layout_constraintTop_toBottomOf="@id/temperatureText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/tv4"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="最高35°，最低23°"
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            />
+    </LinearLayout>
+
+    <!-- 国家预警 -->
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout1"
+        app:layout_constraintStart_toStartOf="parent"
+        android:padding="10dp"
+        >
+<!--左上角的三角高温-->
+        <FrameLayout
+            android:id="@+id/highTemp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            >
+
+            <ImageView
+                android:id="@+id/warn"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/warn" />
+
+            <TextView
+                android:id="@+id/highTempText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="高温"
+                android:textSize="22dp"
+                android:layout_marginLeft="50dp"
+                android:textColor="@color/white"
+
+                android:layout_marginTop="10dp" />
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="30dp"
+            android:text="高温，7月九日星期天21:35结束"
+            android:textColor="@color/white"
+            android:alpha="0.9"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="国家预警发布"
+            android:layout_marginLeft="30dp"
+            android:textColor="@color/white"
+            android:alpha="0.6"
+            />
+
+    </LinearLayout>
+
+    <!-- 空气质量 -->
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        >
+
+        <FrameLayout
+            android:id="@+id/air"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:alpha="0.7"
+                android:src="@drawable/air"
+                />
+            <TextView
+                android:id="@+id/airText1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:alpha="0.7"
+                android:textColor="@color/white"
+                android:layout_marginLeft="40dp"
+                android:text="空气质量"
+                android:textSize="20sp"
+                />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/airText2"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:text="57-良"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+             />
+        <TextView
+            android:id="@+id/airText3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:text="当前AQI(CN)为57"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:alpha="0.8"
+            />
+
+<!--        进度条-->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            >
+            <ImageView
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_marginTop="3dp"
+                android:src="@drawable/line_foreground"
+                />
+        </FrameLayout>
+
+    </LinearLayout>
+
+<!--    每小时天气-->
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:padding="12dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+        >
+
+        <FrameLayout
+            android:id="@+id/hourTemp"
+            android:layout_width="match_parent"
+            android:layout_height="22dp"
+            >
+
+            <ImageView
+                android:layout_marginLeft="10dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/clock_foreground"
+                android:alpha="0.8"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="37dp"
+                android:alpha="0.7"
+                android:text="每小时天气预报"
+                android:textSize="15dp"
+                android:textColor="@color/white"
+                />
+        </FrameLayout>
+
+<!--        天气条-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/weather_recycle"
+            android:layout_width="match_parent"
+            android:layout_height="112dp"
+            >
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <LinearLayout
+            android:id="@+id/linearLayout5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ProgressBar
+                android:id="@+id/progressBar1"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:visibility="gone"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

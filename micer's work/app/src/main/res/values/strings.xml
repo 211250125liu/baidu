@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">BaiduDemo</string>
+    <string name="logo">LOGO</string>
+    <string name="_18">18℃</string>
+    <string name="back_foreground">图片</string>
+    <string name="SearchText">搜索或输入网址</string>
+    <string name="textView3">北京 晴 89 良</string>
+    <string name="Button1">for fun</string>
+    <string name="text1">这些重大问题，习近平的回答掷地有声</string>
+    <string name="back">back</string>
+    <string name="videoshow">videoShow</string>
+    <string name="videoTitle">视频标题</string>
+    <string name="videoimage">videoImage</string>
+</resources>
